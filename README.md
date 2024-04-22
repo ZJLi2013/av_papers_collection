@@ -111,7 +111,7 @@ the repo for paper collections for AV related
 * TorchSparse: efficient pont cloud inference engine (2022, MIT)
 
 
-## light-weight CNNs
+## Light-Weight CNNs
 
 * Sparse Convolutional Neural Networks (2015)
     * sparsity by exploiting inter/intra channel redundancy with a fine-tuning step to minimize accuracy loss
@@ -164,7 +164,7 @@ the repo for paper collections for AV related
 
 * VIT-Slim:  multi-dimension searching in continuous optimization space (Berkeley, 2022 CVPR)
 
-## self-supervised & CV Foundational Models 
+## Self-Supervised & CV Foundational Models 
 
 * self-training with noisy student improved imageNet classification (2020, Google)
     * first train EfficentNet on labeled images, and use it as teacher to generate pseudo labels for 300M unlablled images, then train a larger EfficientNet as student model on the combination of labeled and pseudo labeled images. 
@@ -201,7 +201,6 @@ the repo for paper collections for AV related
 
 ## General Transformer
 
-
 ### Vision Transformer
 
 * DETR: end-to-end object detection with transformer (2020, FAIR)
@@ -231,7 +230,7 @@ the repo for paper collections for AV related
 * Multimodal token fusion for vision transformers (2022, Tsinghua)
 
 
-## quantization inference 
+## Quantized Inference 
 
 * Training Quantized Nets: a deeper understanding (2017, Cornell)
 
@@ -517,7 +516,7 @@ the repo for paper collections for AV related
 
 * Rope3D: the roadside perception dataset for autonomous driving and monocular 3D object detection task (2022, Baidu)
 
-### Multi-View and fusion solutions 
+### Multi-View & Fusion Solutions 
 
 * BEV-Seg: BEV semantic segmentation using geometry and semantic point cloud (2020, Berkeley)
     * predicts pixel depths and combne with pixel semantics in BEV 
@@ -892,7 +891,7 @@ the repo for paper collections for AV related
     * proposed a plane regularization based on singular value decomposition(SVD) and leveraged structural similairty index measure(SSIM) in patch-based loss 
 
 
-### Occupancy network
+### Occupancy Network
 
 * Occupancy Networks: learning 3D reconstruction in fucntion space(2019, MPI)
     *  Occ Networks implicitly represent the 3D surface as the continuous decision boundary of a deep neural network classifier.
@@ -1121,7 +1120,7 @@ the repo for paper collections for AV related
     * model radiance fields as 4D tensor, then factorize 4D tensor into multi compact low-rank tensor components
 
 
-### large scale Nerf 
+### Large Scale Nerf 
 
 * Urban Radiance Fields (Google, 2021)
     * extend nerf by leveraging lidar supervision to address exposure variations between captured images; and leveraging pretrained segment models to supervise densities on rays pointing at sky. 
@@ -1139,7 +1138,7 @@ the repo for paper collections for AV related
 * READ: large-scale neural scene rendering for autonmous driving (2022, Alibaba)
 
 
-### Multi-view 
+### Multi-View 
 
 * Multiview neural surface reconstruction by disentangling geometry and appearance (2020)
 
@@ -1279,8 +1278,6 @@ the repo for paper collections for AV related
     * output the probabilistic distribution of action, then sample one action to control
 
 
-
-
 ## General LLMs & VLMs
 
 * PPO: proximal policy optimization algorithms (2017, OpenAI)
@@ -1349,8 +1346,6 @@ the repo for paper collections for AV related
 * vision language navigation with embodied intelligence: a survey (2024)
 
 
-
-
 ## Drive VLM 
 
 * NuScenes-QA: a mutli-modal visual QA benchmarking for AD scenario (2023, fudan)
@@ -1385,7 +1380,7 @@ the repo for paper collections for AV related
 
 
 
-## reference 
+## Reference 
 
 1. [conenction to diffusion models and others](https://yang-song.net/blog/2021/score/)
 2. [Diffusion Model 中的条件正态分布计算](https://zhuanlan.zhihu.com/p/604912763)
