@@ -41,6 +41,8 @@ the repo for paper collections for AV related
 
 * Sparsity Invariant CNNs (2017)
 
+* Deformable Convolutional Networks (2017, Microsoft)
+
 * Focal Loss for dense object detection (FAIR/Kaiming, 2018)
 
 * An alaysis of scale invariance in object detection by Scale Normalization Image Pyramid(SNIP) (2018)
@@ -50,6 +52,8 @@ the repo for paper collections for AV related
 * YoloV3: An incremental improvement (2018)
 
 * DetNet: a backbone network for object detection(Megvii 2018)
+
+* Deformable Convnet v2: more deformable, better results (2018, Microsoft)
 
 * DetNas: backbone search for object detection (Megvii 2019)
 
@@ -197,10 +201,34 @@ the repo for paper collections for AV related
 
 ## General Transformer
 
-* Full Stack optimization of transformer infernece: a survey (2023, Berkeley)
 
 ### Vision Transformer
 
+* DETR: end-to-end object detection with transformer (2020, FAIR)
+
+* VIT: an image is worth 16x16 words, transformers for image recognition at scale (2021, Google)
+
+* Deformable DETR: deformable transformers for end-to-end object detection (2021, SenseTime)
+
+* Efficient DETR: improving end-to-end object detector with dense priors (2021, Megvii)
+
+* UP-DETR: unsupervised pre-training for object detection with transformers (2021, Tencent)
+
+* a survey on vision transformer (2021)
+
+* MetaFormer is actually what you need for vision (2021, Sea AI Lab)
+
+* Swin Transformer: hierarachical vision transformer using shifted windows (2021, Microsoft)
+
+* YoloS: you only look at one sequence, rethinking transformer in vision through object detection (2021, Horizon Robotics)
+
+* DN-DETR: accelerate DETR training by introductin query DeNoising (2022, UHK)
+
+* BEVT: BER pretraining of video transfomers (2022, Fudan)
+
+* Mobile-Former: bridging mobilenet and transformer (Microsoft, 2022)
+
+* Multimodal token fusion for vision transformers (2022, Tsinghua)
 
 
 ## quantization inference 
@@ -239,29 +267,107 @@ the repo for paper collections for AV related
 
 * ZeroQuant-FP: a leap forward in LLm PTQ using floating-point format (Microsoft, 2023)
     * FP8 activation consistently outshines its integer (INT8) equivalent
-    
-* FP8-Quantization: the power of the exponent (Qualcomm, 2024)
+
+* Full Stack optimization of transformer infernece: a survey (2023, Berkeley)
+
+* FP8 Quantization: the power of the exponent (Qualcomm, 2024)
     * for PTQ,  FP8 is better than INT8 in terms of accuracy, and the choice of the numbers of exponent bits is driven by the severity of outliers in the network. 
 
 * SmoothQuant: accurate and efficient post-training quantization for LLMs(2024, MIT)
 
 
+## AI Infra, AIOps and Distributed Training
 
-## Distributed Training and AIOps
+* Congestion Control for large scale RDMA  Deployments (2015, Mellanox)
+
+* DeepProf: performance analysis for deep learning applications via mining GPU execution patterns (2017, Fudan)
+
+*  Roofline: an insightful visual performance model for floating-point programs and multicore arch (2018)
 
 * Mixed Precision Training (2018, Baidu & Nvidia)
 
 * Multi-tenant GPU clusters for Deep Leraning Workloads: analysis and implications (2018, Microsoft)
 
+* Characterizing Deep Learning I/O worklaods in Tensorflow (2018, Sweden)
+
+* FusionStitching: deep fusion and code generation for tensorflow computation on GPUs(2018, Alibaba)
+
+* RAY: a distributed framework for emerging AI applications (2018, Berkeley)
+
+* Deep Learning Inference in Facebook data center: performance optimization and hardware implication (2018, FAIR)
+
+* Tartan: evaluating model GPU interconnect via mutli-GPU benchmark suite (2018, )
+
+* TBD: benchmarking and analyzing deep neural netowrk training (2018, Toronto)
+
+* Performance modeling and evaluation of distributed deep learning frameworks on GPUs (2018, UHK)
+
+* Scalable Deep Learning on distributed infrastructure: challenges, techniques and tools (2019, Munich)
+
+* Characterizing deep learning training worklaods on Alibaba-PAI (2019, Alibaba)
+
+* Evaluating modern GPU interconnect: PCIe, NVLink, NVSwitch and GPUDirect (2019, )
+
+* RIMA: an RDMA-accelerated model-parallel solution to large scale matrix factorization (2019, Tsinghua)
+
 * PipeDream: Generalized Pipeline Parallelism for DNN Training (2019, Microsoft)
+
+* GPipe: easy scaling with micro-batch pipeline parallelism (2019, Google)
+
+* Efficient Memory managemnet for GPU based deep learning system (2019, Singapore)  
+    * proposed a heuristic algorithm to memory efficient
+
+* Pipe-Torch: pipeline-based distributed deep learning in a GPU cluster with Heterogeneous networking (2019, SEU)
+
+* Is network the bottleneck of distributed training (2020, JHU)
+
+* Deep Learning training in facebook data center: design of scale-up and scale-out system (2020, FAIR)
+
+* EFLOPS: algorithm and system co-design for a High performance distributed training platform (2020, Alibaba)
+
+* DAPPLE: a pipelined data parallel approach for training large models (2020, Alibaba)
+
+* Distributed hierarchical GPU parameter server for massive scale deep learning ADS system (2020, Baidu)
+
+* Training large neural networks with constant memory using a new execution algorithm (2020, Microsoft)
+
+* Pytorch Distributed: experiences on accelerating data parallel training (2020, FAIR)
+
+* Understanding training efficiency of deep learning recommendation models at scale (2020, FAIR)
+
+* ZeRO: memory optimization towards training trillion parameter models (2020, Microsoft)
+
+* Megatron-LM v1: training multi-billion parameter language models using model parallelism (2020, NV)
+
+* ZeRO-offload: democratizing billion-scale model training (2021, Microsoft)
+
+* Megatron-LM v2: efficient large scale language model training on GPU clusters (2021, NV)
+
+* ZeRO-Infinity: Breaking GPU memory wall for extrem scale deep learning (2021, Microsoft)
+
+* Megatron-LM v3: reducing activation recomputation in large transformer models (2022, NV)
+
+* Reducing Activation Recomputation in Large transformer models: sequence parallelism and selective activation recomputation (2022, NV)
+
+* OneFlow: redesign the distributed deep learning framework from scratch (2022, OneFlow)
+
+* Towards scalable distributed training of DL on public cloud clusters (2021, Tencent)
 
 * TorchScale: transfomers at scale (2022, Microsoft)
 
+* Colossal-AI: a unified deep learning system for large-scale parallel training (2022)
 
+* Measuring the algorithm efficiency of neural networks (2022, OpenAI)
+    * algorithmic efficiency doubling every 16 months, outpaces Moore’s law rate of improvement in hardware efficiency. so a good model of AI progress should integrate measures from multiply of both hardware and algorithm efficiency
+
+* A survey on efficient training of transformers (2023, Monash)
+
+* MegaScale: Scaling large language model training to more than 10000 GPUs (2024, Bytedance)
 
 
 ## Multi-Tasks
 
+* HydraNets: specialized dynamic architectures for efficient inference (2017, CMU)
 
 * multi-task multi-sensor fusion for 3D object detection (Uber 2018)
 
@@ -278,6 +384,11 @@ the repo for paper collections for AV related
 * multinet: multi-modal multi-task learning for autonmous driving (2019, Berkeley)
 
 * which tasks should be learned together in multi-task learning (2020, Stanford)
+
+* controllable dynamic multi-task architectures (2021, UC Riverside)
+
+* task adaptive parameter sharing for multi-task learning (2021, U Washington)
+
 
 * a survey on multi-task learning (2021)
 
@@ -359,9 +470,13 @@ the repo for paper collections for AV related
 
 ## General Diffusion 
 
+* Denoising Diffusion Probabilistic Models (2020, Berkeley)
+
 * understanding Diffusion Models: a survey (2022, Google)
 
 * diffusion probabilistic modeling for video generation (2022, California Irvine)
+
+* Diffusion Models: a comprehensive survey of methods and applications (2022, Peking)
 
 * Diffusion models in vision: a survey (2023)
 
@@ -469,7 +584,6 @@ the repo for paper collections for AV related
 
 * DiffBEV: conditional diffusion model for BEV perception (2023, PhiGent)
     * exploit diffusion models to generate more comprehensive BEV representations, further a cross-attention module used to fuse the context of BEV feature and semantic content from diffusion model
-
 
 
 ### 3D Lidar 
@@ -766,6 +880,8 @@ the repo for paper collections for AV related
 
 * fast ground segmentation for 3D Lidar point cloud based on Jump-Convolution-Process (2021)
 
+* road mapping and localization using sparse semantic visual features (2021, Alibaba)
+
 * LR-Seg: a ground segmentation method for low-resolution LIdar point clouds (2023, Tsinghua)
 
 * RoME: Towards large scale road surface reconstruction via mesh representation (2023, Horizon Robotics)
@@ -774,14 +890,6 @@ the repo for paper collections for AV related
 
 * PlaNerf: SVD unsupervised 3D plane regularization for NERF large-scale urban scene reconstruction (2023, Huawei)
     * proposed a plane regularization based on singular value decomposition(SVD) and leveraged structural similairty index measure(SSIM) in patch-based loss 
-
-* [mv-map](https://github.com/ZiYang-xie/MV-Map)  2023 
-
-* [ScalableMap](https://github.com/jingy1yu/ScalableMap), 2023 
-
-* [nv 2023 fegr: nerual fields meet explicit geom representatoins for inverse rendering of urban scene](https://research.nvidia.com/labs/toronto-ai/fegr/)
-
-* [google 2022: urban radiance fields](https://urban-radiance-fields.github.io/)
 
 
 ### Occupancy network
@@ -902,6 +1010,7 @@ the repo for paper collections for AV related
 
 * Understanding Domain Randomization for sim-to-real transfer (2021, Peking)
 
+
 ## Nerf & Scene Reconstruct
 
 * Learning Category-specific Mesh reconstruction from image collections (2018, Berkeley)
@@ -992,7 +1101,6 @@ the repo for paper collections for AV related
 * NeRFect Match: exploring NERF features for visual localization (2024, NV)
 
 
-
 ### Acclerated Nerf 
 
 * Plenoxels: radiance fields without neural networks (2021, Berkeley)
@@ -1011,6 +1119,7 @@ the repo for paper collections for AV related
 
 * TensoRF: tensorial radiance fields (2022, ShangHai Tech)
     * model radiance fields as 4D tensor, then factorize 4D tensor into multi compact low-rank tensor components
+
 
 ### large scale Nerf 
 
@@ -1069,6 +1178,7 @@ the repo for paper collections for AV related
 * EmerNerf: emergent spatial-temporal scene decomposition via self-supervision (2023, NV)
     * learning spatial-temporal representation of dynamic driving scenes, by first stratifies scenes into static and dynamic fields, purly from self-supervision; then learn a flow field from the dynamic field, which used to aggregate multi-frames features to dynamic rendering. 
 
+
 ### Semantic Nerf 
 
 * Semantic-NerF: in-place scene labelling and understanding with implicit scene understanding (2021, London)
@@ -1083,6 +1193,7 @@ the repo for paper collections for AV related
     * leverage 2D pre-trained foundation models(DINO, Latent Diffusion) to 3D space via neural rendering, a.k.a map 2D images to continuous 3D semantic feature volumes.
 
 * Segment Anything in 3D with Nerf (2023, Huawei)
+
 
 ### Lidar Nerf
 
@@ -1134,8 +1245,6 @@ the repo for paper collections for AV related
 * A comprehensive survey of AIGC: a history of generative AI from GAN to ChatGPT (2023, Lehigh)
 
 
-
-
 ## 3D Gausssian
 
 * 3D Gaussian splatting for real-time radiance fields (2023, MPI)
@@ -1143,6 +1252,32 @@ the repo for paper collections for AV related
 * DrivingGaussian: Composite Gaussian splatting for surrounding dynamic autonomous driving scenes (2023, Peking)
 
 * Street Gaussian for modeling dynamic urban scenes (2024, Li Auto)
+
+
+## End-to-End AV
+
+* PnPnet: end-to-end perception and prediction with tracking in the loop (2020, Uber)
+
+* NEAT: neural attention fields for end-to-end autonomous driving (2021, MPI)
+
+* MP3: a unified model to map, perceive, prediction and plan (2021， Uber)
+
+* VAD: vectorized scene representation for efficient autonomous driving (2022, Horizon Robotics)
+    * VAD exploits the vectorized agent motion and map elements as explicit instance-level planning constraints 
+
+* AD-MLP: rethinking the open-loop evaluation of end-to-end AD in nuScenes(2023, Baidu)
+
+* BEV-Planner: is ego status all you need for open-loop end-to-end AD (2023, NV)
+
+* ReasonNet: end-to-end driving with temporal and global reasoning (2023, SenseTime)
+
+* UniAD: planning oriented autonomous driving (2023, SH AI Lab)
+
+* End-to-end autonomous driving: challenges and frontiers (2023, SH AI Lab)
+
+* VAD-v2: end-to-end vectorized autonomous driving via probabilistic planning(2024, Horzion Robotics)
+    * output the probabilistic distribution of action, then sample one action to control
+
 
 
 
@@ -1181,8 +1316,6 @@ the repo for paper collections for AV related
 
 * self-instruct: aligning lanuage models with self-generated instructions (2023, Washington)
 
-* SmoothQuant: accurate and efficient post-training quantization for large lanuage models (2023, MIT/Han)
-
 * multimodal foundation models: from specialist to general-purpose assistants (2023, Microsoft)
 
 * towards a unified agent with foundation models (2023, DeepMind)
@@ -1220,6 +1353,8 @@ the repo for paper collections for AV related
 
 ## Drive VLM 
 
+* NuScenes-QA: a mutli-modal visual QA benchmarking for AD scenario (2023, fudan)
+
 * Driving with LLMs: fusing object-level vector modality for explainable autonomous driving (2023, Wayve)
 
 * Drive Like a human: rethinking autonmous driving with LLM (2023, SHAI Lab)
@@ -1241,19 +1376,11 @@ the repo for paper collections for AV related
 * DriveVLM: the convergence of autonmous driving and large vision-lanuage models (2024, Li Auto)
 
 
-
-
 ## Generative 3D 
 
 * Get3D: a generative model of hihg quality 3D textured shapes learned from images (2022, NV)
 
 * Magic3D: high-resolution text-to-3D content creation (2022, NV)
-
-
-## accleration computing 
-
-*  Roofline: an insightful visual performance model for floating-point programs and multicore arch (2018)
-
 
 
 
@@ -1267,4 +1394,3 @@ the repo for paper collections for AV related
 5. [Occupancy Network综述](https://zhuanlan.zhihu.com/p/611625314)
 6. [BEV纯视觉感知算法笔记](https://zhuanlan.zhihu.com/p/633624413)
 7. [BEV感知学习](https://www.zhihu.com/column/c_1637492524494348288)
-8. [openDriveLan AD23 Challenge](https://opendrivelab.com/AD23Challenge.html#Track3)
