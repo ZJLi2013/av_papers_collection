@@ -160,13 +160,48 @@ the repo for paper collections for AV related
 
 * VIT-Slim:  multi-dimension searching in continuous optimization space (Berkeley, 2022 CVPR)
 
-## CV Foundational Models 
+## self-supervised & CV Foundational Models 
 
+* self-training with noisy student improved imageNet classification (2020, Google)
+    * first train EfficentNet on labeled images, and use it as teacher to generate pseudo labels for 300M unlablled images, then train a larger EfficientNet as student model on the combination of labeled and pseudo labeled images. 
+
+* SimCLR: a simple framework for contrastive learning of visual representation (2020, Google)
+
+* MoCo: momentum contrast for unsupervised visual representation learning (2020, FAIR)
+
+* PIC: parametric instance classification for unsupervised visual feature learning (2020, Microsoft)
+
+* towards open world object detection (2021)
+
+* DetCo: unsupervised contrastive learning for object detection (2021, UHK)
+
+* BeiT: BERT pre-training of image transformers (2021, Microsoft)
+
+* Benchmarking detection transfer learning with vision transformers (2021, FAIR)
+    * observed mask-based method(BEIT, MAE) show considerable gains over both supervised and random initialization and these gains increase as model size increases.
+
+* DINO: emerging properties in self-supervised vision transformers (2021, FAIR) 
+    * evidence that self-supervised learning could be the key to develper BERT-like model based on VIT 
+
+* MAE: masked autoencoders are scalable vision learners (2021, FAIR)
+    * mask random patches of the input image and reconstruct the missing pixels to an encoder-decoder model, where encoder operate only on the visible patches, and the decoder reconstructs the original image from latent representation and mask tokens 
+
+* SimMIM: a simple framework for masked image modeling (2021, Microsoft)
+
+* iBOT: image BERT pre-training with online tokenizer (2022, ByteDance)
+    * propose oneline tokenizer to find a semantic meaningful visual tokenizer for masked image modeling(MIM)
+
+* VPT: visual prompt tuning (2022, Cornell)
+    * VPT introduce only a small amount of trainable parameters in the input space while keeping the model backbone frozen
 
 
 ## General Transformer
 
 * Full Stack optimization of transformer infernece: a survey (2023, Berkeley)
+
+### Vision Transformer
+
+
 
 ## quantization inference 
 
@@ -240,8 +275,9 @@ the repo for paper collections for AV related
 
 * Multi-Task leanring as multi-object optimization (2019, Intel)
 
-* which tasks should be learned together in multi-task learning (2020, Stanford)
+* multinet: multi-modal multi-task learning for autonmous driving (2019, Berkeley)
 
+* which tasks should be learned together in multi-task learning (2020, Stanford)
 
 * a survey on multi-task learning (2021)
 
@@ -261,7 +297,11 @@ the repo for paper collections for AV related
 
 * FuseMODNet: real-time camera and Lidar based moving object detection for robust low-light autonomous driving (2019, Valeo)
 
+* rethinking CNN frameworks for time-senstive autonomous driving applications: addressing an industrial challenge (2019, UNC)
+
 * A survey of deep leraning techniques for autonomous driving (2020)
+
+* replacing mobile camera ISP with a single deep learning model (2020, ETH)
 
 * Deep mutli-modal object detection and semantic segmentation for autonomous driving: datasets, methods and chanllenges(2020, Bosch)
 
@@ -298,6 +338,11 @@ the repo for paper collections for AV related
 
 * FCN: Fully Convolutional Networks for Semantic Segmentation (2016, Berkley)
 
+* DeepLabv3+: Encoder-Decoder with Atrous Separable convolution for semantic image segmentation (2018, Google)
+
+* automated evaluation of semantic segmentation robustness for autonmous driving (2020)
+
+* PointRend: image segmentation as rendering (2020, FAIR)
 
 * SegFormer: simple and efficient design for semantic segmentation with Transformers (2021, NVIDIA)
     * proposed a hierarchically transformer encoders to output multiscale features, then aggregate with MLP 
@@ -310,15 +355,22 @@ the repo for paper collections for AV related
 
 * SAM: segment Anything (2023, FAIR)
 
+* Better Call SAL: towards learning to segment anything in Lidar (2024, NV)
 
 ## General Diffusion 
 
 * understanding Diffusion Models: a survey (2022, Google)
 
+* diffusion probabilistic modeling for video generation (2022, California Irvine)
+
+* Diffusion models in vision: a survey (2023)
+
+* ControlNet: adding conditional control to text-to-image diffusion models (2023, Stanford)
+
+
 
 
 ## AV BEV/3D Tasks
-
 
 * stereo vision-based semantic 3D object and ego-motion trakcing for autonomous driving(2018, HKUST)
 
@@ -339,6 +391,8 @@ the repo for paper collections for AV related
 * BEV-LaneDet:  a simple and effective 3D Lane Detection baseline(2023, Haomo)
 
 * Transformer based sensor fusion for autonomous driving: a survey (2023, Motional)
+
+* towards viewpoint robustness in BEV segmentation (2023, NV)
 
 ### 3D Mono-View 
 
@@ -450,6 +504,8 @@ the repo for paper collections for AV related
 
 * RandLA-net: efficient semantic segmentation of large-scale point clouds (2020, Oxford)
     * random point sampling with local feature aggregation module to progressively increate the receptive field of each 3D point
+
+* Pseudo-Lidar++: accurate depth for 3D object detection in AD (2020, Cornell)
 
 * PointAcc: efficient Point Cloud Accelerator (2021, MIT)
 
@@ -578,6 +634,11 @@ the repo for paper collections for AV related
 
 ### Tracking & Prediction in 3D 
 
+* exploring the limitations of behavior cloning for autonomous driving (2019)
+
+
+* CenterTrack: Tracking objects as points (2020, UT Austin)
+
 * 3D Mutli-Object Tracking (AB3DMOT): a baseline and new evaluation metrics (2020, CMU)
     * lidar 3D detector + 3D Kalman filter and Hungarian algorithm to state estimation
 
@@ -585,8 +646,42 @@ the repo for paper collections for AV related
 
 * PILOT: Efficient Planning by imitation learning and optimisation for safe autonomous driving (2021)
 
+* Scene Transformer: a unified multi-task model for behavior prediction and planning (2021, Google)
+    * predicting the behavior of all agents jointly in real-world driving with masking strategy. 
+
 * Binary TCC: A temporal Geofence for Autonomous Navigation (NVIDIA, 2021)
     * time-to-collide as path planning
+
+* mmTransformer: multimodal motion prediction with stacked transformers (2021, UHK)
+    * model multimodality at feature level with a set of fixed independent proposals
+
+* Immortal Tracker: tracklet never dies (2021, Tusimple)
+    * reveal that pre-mature tracklet termination is the main cause of identity swithces in 3DMOT, 
+
+* SimpleTrack: understanding and rethinking 3D multi-object tracking (2021, TuSimple)
+
+* MOTR: end-to-end multiple-object tracking with Transformer (2022, megvii)
+    * introduce  "track query" to model the tracked instances in sequnce of video and propose tracklet-aware label assignment to train track queries and newborn object queries.
+
+* MOTRv2: bootstrapping end-to-end multi-object tracking by pretrained object detectors (2022, megvii)
+    
+* MUTR3D: a multi-camera tracking framework via 3D-to-2D queries (2022, Tsighua Zhao Hang)
+    * introduce 3D  track query to model spatial and apperance coherent track for each objects, wo explicitly rely on spatial and appearance similarity of objects, and map the 3D track query to their 2D image with view transformation 
+
+* PTTR: relational 3D point cloud object tracking with transformer (2022, Nanyang)
+    * coarse tracking by matching two sets of point features via cross-attention, 
+
+* Motion Transformer with global intention localization and local movemnet refinement (2023, MPI)
+    * proposed MTR that models motion prediction as the joint optmization of global intention localization and local movement refinement, then a prediction refinement module to obtain the final refined prediction
+
+* OmniTracker: unifying object tracking by tracking-with-detection (2023, Fudan)
+    * propose the way, where tracking supplyment appearance priors for detection and detection provides tracking with candidate bbox for association
+
+* ViP3D: end-to-end visual trajectory prediction via 3D agent queries (2023, Tsinghua)
+    * instead of separate perception and prediction modules, ViP3D use sparse agent queries to detect, track and prediction in one pipeline, where features in spatial and temporal are encoded in agent queries.
+
+
+
 
 ### Ground Truth Auto-Labeling System
 
@@ -731,6 +826,8 @@ the repo for paper collections for AV related
 
 * Driving Simulation Technologies for sensor simulation in SiL and HiL environments (2018, dSpace)
 
+* DeepRoad: GAN based metamorphic testing and input validation framework for ADS (2018, UTexas at Austin)
+
 * Test your self-driving algorithm: an overview of publicly available driving datasets and virtual test enviroments (2019)
 
 * Towards corner case detection for autonomous driving (2019, Volkswagen)
@@ -745,8 +842,7 @@ the repo for paper collections for AV related
 
 * Generation of scenes in intersections for the validatoin of hihgly automated driving functions(2019, Bosch)
 
-* PreSIL: precise synthetic image and Lidar dataset for autonomous vehicle perception(2019, Waterloo)
-    * SDG based on GTA gamer
+* ML based fault injection for autonmous driving (2019, NV)
 
 * Multimodal safety-critical scenarios generations for decision-maker algorithms evaluation(2020, CMU)
 
@@ -755,12 +851,13 @@ the repo for paper collections for AV related
 
 * Cam2BEV: a sim2real DL approach for the transformation of images from multiple vehicle-mounted camreas to a semantically segmented image in BEV (2020)
 
-
 * SimNet: learning reactive self-driving simulations from real-world observations(2021, Lyft)
     * Markov Process + DL to model state distribution and transition functions
 
 * AdvSim: Generating safety-critical scenarios for self-driving (2021, Uber)
     * adversarial framework to generate scenarios for lidar based system
+
+* DriveGAN: towards a controllable high-quality neural simulation (2021, NV)
 
 * SceneGen: learning to generate realistic traffic scenes(2021, Uber)
     * with ego state + hdmap to generate scenarios
@@ -775,6 +872,9 @@ the repo for paper collections for AV related
 * Imaging the road ahead:  multi-agent trajectory prediction via differentiable simulation (2021)
     * build a fully differentiable simulator for multi-agent trajectory prediction
 
+* VISTA 2.0 : an open, data-driven simulator for multimodal sensing and policy leanring for autonomous vehicles (2021, MIT/Han)
+    * 
+
 * IterSim: interactive traffic simulation via explicit relation modeling(2022, ZhaoHang's Team)
     * input as ego trajectory, InterSim inference agents trajectories
 
@@ -783,11 +883,20 @@ the repo for paper collections for AV related
 
 ## SDG 
 
+* A lidar point cloud generator: from a virtual world to autonomous driving (2018, Berkeley)
+
+* Synthetic data for deep learning: a survey (2019, Synthesis.AI)
+
 * Meta-Sim: learning to generate synthetic datasets (2019, NVIDIA)
     * a generative model learns to modify attributes of scene graphs
 
 * Meta-Sim2: unsupervised learning of scene structure for synthetic data generation (2020, NVIDIA)
     * RL to learn sequentially sample rule from a given probabilistic scene grammer
+
+* Synthetic data generation using imitation training (2020, NV)
+
+* SurfelGAN: synthesizing realistic sensor data for autonomous driving (2020, Waymo)
+
 
 * SDG: towards optimal strategies for training self-driving perception models in simulation (2021, NVIDIA)
 
@@ -798,14 +907,22 @@ the repo for paper collections for AV related
 * Learning Category-specific Mesh reconstruction from image collections (2018, Berkeley)
     * the shape is represented a deformable 3D mesh model of an object category where a shape is parameterized by a learned mean shape and per-instance predicted deformation.
 
-
 * DeepSDF: learning continuous signed distance functions for shape representation (2019, Facebook)
     * representation implicitly encode a shape's boundary as zero-level-set of the SDF while explicitly representing the classification of space as interior or outer
 
-* Multiview neural surface reconstruction by disentangling geometry and appearance (2020)
+* NERF: representing scenes as neural radiance fields for view synthesis (2020, Berkeley)
 
 * Points2Surf:  learning implicit surfaces from point clouds (2020)
     * learning a prior by a combination of detail local patches and coarse global info to imporove reconstruct performance and accuracy
+
+* NeRV: neural reflectance and visibility fields for relighting and view synthesis (Google, 2020)
+    * proposed a model to represent scene as a continous volumetric function, parameterized as MLPs, with 3D locations as input, and output scene properties(volumen density, surface normal, material parameters, visibility) at the input location
+
+* Free view synthesis (2020, Intel)
+    * calibrate input images via SFM, and create a coarse scaffold via MVS, which further used to create a proxy depth map for novel view, then a recurrent encoder-decoder network process the proxy depth to joint features from nearby view and output novel view.
+
+* RegNef: regularizing neural radiance fields for view synthesis from sparse input(2021, Google)
+    * observed majority of artifacts in sparse input scenarios are caused by errors in the estimated scene geometry. propose solution by regularizing the geometry and appearance of patches rendered from unobserved viewpoints, and annealing(退火) the ray sampling space during training. 
 
 * dense depth priors for neural radiance fields from sparse input views (Google, 2021)
     * first utilize sparse points from SFM to depth completion, then use these depth estimation as constraints for nerf training     
@@ -813,8 +930,13 @@ the repo for paper collections for AV related
 * Neural-Pull: learning SDF from point clouds by leanring to pull space onto surfaces( 2021)
     * train a network to pull query 3D location to their closest points on the surface by using predicted SDF values and the gradient at query locations
 
-* GIRAGGE: representation Scenes as compositional generative Neural Fetaures Fields (2021, MPI)
-    * 
+* Ref-Nef: structured view-dependent appearance for neural radiance fields (2021, Google)
+    * observed nerf failed to accurately capture and reproduce the appearance of glossy surfaces, proposed solution to replace view-dependent outgoing radiance parameters with a representation of reflected radiance.
+
+* Nerf in the wild: neural radiance fields for unconstrained photo collections (2021, Google)
+
+* Stable View Synthesis (2021, Intel)
+    * get geometric scaffold vai SFM, each point on this 3D scaffold asociated with view rays and feature vectors that encode the appearance of this point in images. 
 
 * NKF: Neural Fields as Learnable kernels for 3D reconstruction (2021, NV)
     * kernel methods with appropriate inductive bias are extremly effective for reconstructing shapes. 
@@ -825,23 +947,23 @@ the repo for paper collections for AV related
 * Mending neural implicit modeling for 3D vehicle reconstruction in the wild (2021, Uber)
     * nerf with prior shape latent-code, test-time regularized optimization, a deep discriminator as shape prior and a learning strategy to learn shape priors on synthetic data
 
-* UNISURF: unifying neural implicit surfaces and radiance fields for multi-view reconstruction (2021, MPI)  
-    * surface models and radiance fields(nerf) can be formulated in a unified way, enabling both surface and volume rendering using the same model
-
 * Volume Rendering of neural implicit surfaces (2021, FAIR)
     * improve geom representation and reconstruct in volume rendering, by modeling volume density as a Laplace's cumulative distribution func applied to SDF representation 
 
 * MonoSDF: exploring monocular geometric cues for neural implicit surface reconstruction (2022) 
     * demonstrate that depth and normal cues, predicted by general-purpose monocular estimators, significantly improve reconstruct quality and optimization time.
 
-* NeuralWarp: improving neural implicit surfaces geometry with patch warps (2022)
-    * prpose to add photo-consistency term acrros multi-views (by measuring similarity with predicted occupancy and normals of 3D points alone each ray) to standard neural rendering
-
 * Shape, Light and material decomposition from images using Monte Carlo rendering and denoising (2022, NV)
     * proposed a realistic shading model, incorporating ray tracing and Monte Carlo integration to substantially improves decomposition into shape, materials and lighting. to address noise during Monte Carlo integration, further with multi importance sampling and denoising during rendering pipeline
 
+* Mip-NERF360: unbounded anti-aliased neural radiance fields (2022, Google)
+    * use a non-linear scene parameterization and distortion-based regularizer for unbounded scenes
+
 * NVDiffrec: extracing triangular 3D models, materials and lighting from images (2022, NV)
     * leverage differentiable rendering to disentangle 3D mesh with spatial-varying material and environment lighting
+
+* Control-Nerf: editable feature volumes for scene rendering and manipulation (2022, )
+    * proposed a model to decouple volume rendering from scene-specific geometry and appearance.
 
 * Noise2NoiseMapping: learning SDF from noisy 3D point clouds via noise to noise mapping(2023, )
     * proposed a loss which enable statistical reasoning on point clouds and maintain geometric consistency
@@ -852,6 +974,72 @@ the repo for paper collections for AV related
 * Neuralangelo: high-fidelity neural surface reconstruction (2023, NV)  
     * numerical gradients for higher-order derivatives as smoothing operator and coarse-to-fine optimization on hash grids to control level of details
 
+* F2-nerf: fast neural radiance field training with free camear trajectories (2023, MPI)    
+    * proposed a space-warning method to handle arbitrary trajectoreis in the grid-base nerf framework
+
+* LightSim: neural lighting simulation for urban scenes (2023, Wabbi)
+    * LightSim automatically builds lighting-aware digital twins at scale from collected raw sensor data and decomposes the scene into dynamic actors and static background with accurate geometry, appearance, and estimated scene ligh. 
+
+* NeuRAD: neural rendering for autonmous driving (2023, Zenseact)
+    * nerf scene representation with neural camera, lidar models 
+
+* UniSim: a neural closed-loop sensor simulation (2023, Waabi)
+
+* Car-Studio: learning car radiance fields from single view and endless in-the-wild images (2023)
+
+* NerfXL: Nerf at any scale with multi-GPU (2024, NV)
+
+* NeRFect Match: exploring NERF features for visual localization (2024, NV)
+
+
+
+### Acclerated Nerf 
+
+* Plenoxels: radiance fields without neural networks (2021, Berkeley)
+    * represent scene as a sparse 3D grid with spherical harmonics
+
+* PlenOctrees: for real-time rendering of neural radiance fields (2021, Berkeley)
+    * pre-tabulating nerf into PlenOctree
+
+* InstantNPG: instant neural graphics primitives with a multiresolution hash encoding (2021, NV)
+    * replace MLP nerf with a smaller neural network with multi-resolution hash table of trainble vectors 
+
+* DirectVoxGO: direct voxel grid optimization, super-fast convergence for radiance fields reconstruction (2022, ETHU)
+    * adopt a scene representation as a density volx grid for scene geometry and a feature voxel grid for scene geometry and a feature voxel grid with a shallow network for complex view-dependent appearance.
+
+* Improved Direct Voxel Grid optimization for radiance fields reconstruction (2022, ETHU)
+
+* TensoRF: tensorial radiance fields (2022, ShangHai Tech)
+    * model radiance fields as 4D tensor, then factorize 4D tensor into multi compact low-rank tensor components
+
+### large scale Nerf 
+
+* Urban Radiance Fields (Google, 2021)
+    * extend nerf by leveraging lidar supervision to address exposure variations between captured images; and leveraging pretrained segment models to supervise densities on rays pointing at sky. 
+
+* Mega-Nerf: scalable construction of large-scale nerfs for virtual fly-throughs (2021, CMU)
+
+* Block-Nerf: scalable large scene neural view synthesis (Waymo, 2022)
+    * demonstrate when rendering nerf in city scale, requires decompose into smaller neural volumes, with additional appearance embeddings to align appearance between adjacent nerf blocks.
+
+* FEGR: Neural Fields meet explicit geometric representations for inverse rendering of urban scenes (2022, NV)
+    * nerf methods achieve impressive fidelity of 3D reconstruction, while bake lighting and shadows into the radiance field, here proposed an inverse rendering framework for large urban scenes capable of jointly reconstructing the scene geometry, spatially-varying materials and HDR lighting from RGBs with optional depth.
+
+* Neural Light Field Estimation for street scenes with differentiable virtual object insertion (2022, NV)
+
+* READ: large-scale neural scene rendering for autonmous driving (2022, Alibaba)
+
+
+### Multi-view 
+
+* Multiview neural surface reconstruction by disentangling geometry and appearance (2020)
+
+* UNISURF: unifying neural implicit surfaces and radiance fields for multi-view reconstruction (2021, MPI)  
+    * surface models and radiance fields(nerf) can be formulated in a unified way, enabling both surface and volume rendering using the same model
+
+* NeuralWarp: improving neural implicit surfaces geometry with patch warps (2022)
+    * prpose to add photo-consistency term acrros multi-views (by measuring similarity with predicted occupancy and normals of 3D points alone each ray) to standard neural rendering
+
 * NeuS: learning neural implicit surfaces by Volmen Rendering for multi-view reconstruction (2023, MPI)
     *  reconst objects from 2D images, by representing surface as zero-level set of SDF and developing a new volume rendering method to training a neural SDF representation
 
@@ -859,24 +1047,135 @@ the repo for paper collections for AV related
     * parameterized neural surface representatoin by multi-resolution has encodings 
 
 
-* F2-nerf: fast neural radiance field training with free camear trajectories (2023, MPI)    
-    * proposed a space-warning method to handle arbitrary trajectoreis in the grid-base nerf framework
+### Dynamic Scene
+
+* Object centric neural scene rendering (2020, Stanford)
+    * propose a representation that modles per-object light transport implicitly using a lighting and view-dependent neural network. 
+
+* Neural Scene Graphs for dynamic scenes (2021, Princeton)
+    * decompose dynamic scenes into scene graphs, and proposed a learned scene graph representation, which encodes object transformation and radiance
+
+* D-nerf:  neural radiance fields for dynamic scenes (2021, MPI)    
+    * consider time as an additional input, split the learning process into 2 stages: first encode the scene in a canonical space, then map this canonical representation into the deformed scene at a particular time.
+
+* D2Nerf:  self-supervised decoupling of dynamic and static objects from a monocular video(2022, Cambridge)
+    * represent the dynamic objects and static background by 2 separate neural radiance fields, proposed a new los to correct separation, and a shadow network to decouple dynamically moving shadows.
+
+* Panoptic neural field: a semantic object-aware neural scene representation (2022, Google)
+    * decompose a scene into a set of objects and background, each object represented by an oriented 3D bbox and MLP, the background is represented by a MLP with additinoaly semantic labels output. 
+
+* MARS: an instance-aware, modular and realistic simulator for autonomous driving (2023, Tqinghua/Zhao Hao)
+
+* EmerNerf: emergent spatial-temporal scene decomposition via self-supervision (2023, NV)
+    * learning spatial-temporal representation of dynamic driving scenes, by first stratifies scenes into static and dynamic fields, purly from self-supervision; then learn a flow field from the dynamic field, which used to aggregate multi-frames features to dynamic rendering. 
+
+### Semantic Nerf 
+
+* Semantic-NerF: in-place scene labelling and understanding with implicit scene understanding (2021, London)
+    * extend NERF to jointly encode semantics with appearance and geometry, so that complete and accurate 2D semantic labels achieved
+
+* Sem2NerF: converting single-view semantic masks to neural radiance field (2022, NTU)
+    * encoding semantic mask into latent code taht controls 3D scene representation with region-aware learning strategy
+
+* Panoptic Nerf: 3D-to-2D label transfer for panoptic urban scene segmentation (2022, ZJU)
+
+* FeatureNerf:  learning generalizable NERFs by distilling foundation models (2023, Tusimple)
+    * leverage 2D pre-trained foundation models(DINO, Latent Diffusion) to 3D space via neural rendering, a.k.a map 2D images to continuous 3D semantic feature volumes.
+
+* Segment Anything in 3D with Nerf (2023, Huawei)
+
+### Lidar Nerf
+
+* LidarSim: realistic Lidar simulation by leveraging the real world (2020, Uber)
+    * a lidar sim model based on ray casting in virtual 3D traffic scenes.
+
+* NLF: Neural Lidar fields for novel view synthesis (2023, NV)
+    * combine neural rendering with detailed, physically motivated Lidar sensing process 
+
+* DyNFL: dynamic Lidar resimulation using compositional neural fields(2023, NV)
+    * prposed nerual based simulation of Lidar in dynamic scenes. 
+
+* GPU rasterization based 3D Lidar simulation for deep learning (2023, MPI)
+
+* Nerf-Lidar: generating Realistic Lidar point clouds with neural radiance Fields (2023, Fudan)
+    * reconst the scene with nerf, then util a virtual lidar simulator to generate lidar points(), then create point-wise semantic label. supervision with depth, rgb, lidar and semantic.
+
+
+### Nerf for SDG
+
+* PreSIL: precise synthetic image and Lidar dataset for autonomous vehicle perception(2019, Waterloo)
+    * SDG based on GTA gamer
+
+* GeomSim:  realistic video simulation via geometry-aware composition for self-driving (2021, Uber)
+    * propose a geometry-aware image composition process, in which 1) learn geometry and appearance from real sensor data, 2) propose an realistic object placements in a given scene, 3) render the scene with dynamic object from 1), 4) compose and blend the rendered image segments.
+
+* CalraScenes: a synthetic dataset for odometry in autonomous driving (2021)
+
+* is synthetic data from generative model ready for image recognition? (2023, UHK)
+
+* NeuSim: Reconstructing objects in the wild for realistic sensor simulation (2023, Waabi)
+    * represent the object surface as neural SDF and leverage both Lidar and camera to reconstruct smooth and accurate geometry and normals, and model object appearance with physics inspired reflectance representation.
+
+* SHIFT: a synthetic driving dataset for continuous multi-task domain adaptation (2021, MPI)
+
+
+### GAN in Nerf
+
+* styleGAN-v1: a style-based generator architecture for generative adversarial network (2019, NV)
+
+* styleGAN-v3:  alias-free generative adversarial networks (2021, NV)
+
+* GRAF: generative radiance fields for 3D-aware image synthesis (2021, MPI)
+
+* GIRAGGE: representation Scenes as compositional generative Neural Fetaures Fields (2021, MPI)
+
+* efficient geometry-aware 3D generative adversarial network (2022, NV)
+
+* A comprehensive survey of AIGC: a history of generative AI from GAN to ChatGPT (2023, Lehigh)
+
+
 
 
 ## 3D Gausssian
 
+* 3D Gaussian splatting for real-time radiance fields (2023, MPI)
+
+* DrivingGaussian: Composite Gaussian splatting for surrounding dynamic autonomous driving scenes (2023, Peking)
+
+* Street Gaussian for modeling dynamic urban scenes (2024, Li Auto)
 
 
 
-## General LLMs
+## General LLMs & VLMs
 
 * PPO: proximal policy optimization algorithms (2017, OpenAI)
+
+* parameter efficient transfer leraning for NLP (2019, Google)
 
 * P-tuning: GPT understands too (2021, Tsinghua)
 
 * the power of scale for parameter-efficient prompt tuning (2021, Google)
 
+* VisualGPT: data-efficient adaptation of pretrained language models for image caption (2021, KAUST)
+
+* ViLT: visiona-and-lanuage transformer without convolution or region supervision (2021)
+
+* CLIP: learning transferable visual models from natural language supervision (2021, OpenAI)
+
 * FlashAttention: fast and memory efficient exact attention with IO-awarenewss (2022, Stanford)
+
+* CoOp:  learning to prompt for vision-lanuage models (2022, Nanyang)
+
+* BLIP: bootstrapping lanuage-image pret-training for unified vision-lanuage understanding and generation (2022, Salesforce)
+
+* Hierarchical text-conditional image generation with CLIP latents (2022, OpenAI)
+    * first generate a prior by CLIP, then use a diffusion model to generate image 
+
+* Flamingo: a visual lanuage model for few shot learning (2022, DeepMind)
+
+* VL-Adapater: parameter-efficient transfer learning for vision-and-language tasks(2022, UNC)
+
+* Vision Language pre-training: basics, recent advances and future trends (2022, Micorsoft)
 
 * LLama: open and efficient foundation lanuage models (2023, Meta)
 
@@ -884,18 +1183,77 @@ the repo for paper collections for AV related
 
 * SmoothQuant: accurate and efficient post-training quantization for large lanuage models (2023, MIT/Han)
 
+* multimodal foundation models: from specialist to general-purpose assistants (2023, Microsoft)
+
+* towards a unified agent with foundation models (2023, DeepMind)
+
 * the false promise of imitating proprietary LLMs (2023 Berkely)
-    * the model imitation is a false promise, 
+
+* Chain of thought prompting elicits reasoning in llm (2023, Google)
+
+* RT2: vision-language-action models transfer web knowledge to robotic control (2023, Google)
+
+* Llama-adapter v2: parameter-efficient visual instruction model (2023, SHAI Lab)
+
+* LLM-adapters: an adapter family for parameter-efficient fine-tuning on LLM (2023, Singapore)
+
+* Qwen-VL: a versatile VLM for understanding, localization, text reading and beyond (2023, Alibaba)
+
+* LLAVA: visual instruction tuning (2023, Microsoft)
+
+* MiniGPT4: enhancing vision lanuage understanding with advacned LLM (2023, KAUST)
+
+* a systematic survey of prompt engineering on vision-lanuage foundation models (2023, Oxford)
+
+* a survey of resource-efficient LLM and multimodal foundation models (2024)
+
+* efficient LLMs: a survey (2024)
+
+* a survey on Hallucination in large vision language models (2024, Huawei)
+
+* vision language models for vision taks: a survey (2024, Nanyang)
+
+* vision language navigation with embodied intelligence: a survey (2024)
+
+
 
 
 ## Drive VLM 
 
+* Driving with LLMs: fusing object-level vector modality for explainable autonomous driving (2023, Wayve)
 
+* Drive Like a human: rethinking autonmous driving with LLM (2023, SHAI Lab)
+
+* DiLU: a knowledge-driven approach to autonomous driving with LLM (2023, SHAI Lab)
+
+* LMDrive: closed-loop end-to-end driving with LLM (2023, MMLab)
+
+* DriveLM: Drivign with graph visual question answering (2023, SHAI Lab)
+
+* ADAPT: action-aware driving caption transformer (2023, Tsinghua)
+
+* on the road with GPT-4Vision: early exploratoins of VLM on autonmous driving (2023, SHAI Lab)
+
+* DriveGPT4: interpretable end-to-end autonomous driving via LLM (2024, UHK)
+
+* BEV-CLIP: multi-modal BEV retrieval methodology for complex scene in autonmous driving (2024, Li Auto)
+
+* DriveVLM: the convergence of autonmous driving and large vision-lanuage models (2024, Li Auto)
+
+
+
+
+## Generative 3D 
+
+* Get3D: a generative model of hihg quality 3D textured shapes learned from images (2022, NV)
+
+* Magic3D: high-resolution text-to-3D content creation (2022, NV)
 
 
 ## accleration computing 
 
 *  Roofline: an insightful visual performance model for floating-point programs and multicore arch (2018)
+
 
 
 
